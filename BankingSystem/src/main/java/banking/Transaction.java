@@ -14,11 +14,12 @@ public class Transaction implements TransactionInterface {
      * @throws Exception Account validation failed.
      */
     public Transaction(BankInterface bank, Long accountNumber, int attemptedPin) throws Exception {
-        // TODO: complete the constructor
+        if( attemptedPin != 1) throw  new Exception("account validation failed");
+        this.bank = bank;
+        this.accountNumber = accountNumber;
     }
 
     public double getBalance() {
-        // TODO: complete the method
         return -1;
     }
 

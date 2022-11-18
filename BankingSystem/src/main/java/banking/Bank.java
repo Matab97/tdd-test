@@ -11,17 +11,14 @@ public class Bank implements BankInterface {
     private LinkedHashMap<Long, Account> accounts;
 
     public Bank() {
-        // TODO: complete the constructor
     }
 
     private Account getAccount(Long accountNumber) {
-        // TODO: complete the method
-        return null;
+        return this.accounts.getOrDefault(accountNumber,null);
     }
 
     public Long openCommercialAccount(Company company, int pin, double startingDeposit) {
-        // TODO: complete the method
-        return -1L;
+        return ;
     }
 
     public Long openConsumerAccount(Person person, int pin, double startingDeposit) {
@@ -61,4 +58,5 @@ public class Bank implements BankInterface {
         // TODO: complete the method
         return new HashMap<>();
     }
+
 }
