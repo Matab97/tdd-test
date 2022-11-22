@@ -3,7 +3,7 @@ package banking;
 /**
  * Abstract Account Holder.
  */
-public abstract class AccountHolder {
+public abstract class   AccountHolder {
     private int idNumber;
     
     /**

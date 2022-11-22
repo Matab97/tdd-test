@@ -1,5 +1,6 @@
 package banking;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,7 @@ public class CommercialAccount extends Account{
 
     public CommercialAccount(Company company, Long accountNumber, int pin, double startingDeposit) {
         super(company,accountNumber,pin,startingDeposit);
+        authorizedUsers = new ArrayList<>();
     }
 
     /**
@@ -29,6 +31,6 @@ public class CommercialAccount extends Account{
      * @return <code>true</code> if person matches an authorized user in {@link #authorizedUsers}; <code>false</code> otherwise.
      */
     public boolean isAuthorizedUser(Person person) {
-        return authorizedUsers.contains(person);
+        return person != null && authorizedUsers.stream().anyMatch(person::isSame);
     }
 }

@@ -1,5 +1,7 @@
 package banking;
 
+import java.util.Objects;
+
 /**
  * The concrete Account holder of Person type.
  */
@@ -19,6 +21,13 @@ public class Person extends AccountHolder{
 
     public String getLastName() {
         return this.lastName;
+    }
+
+    public boolean isSame(Person person)
+    {
+        return person.getIdNumber() == this.getIdNumber() &&
+                Objects.equals(person.getFirstName(), this.firstName) &&
+                Objects.equals(person.getLastName(), this.lastName);
     }
 
 }
